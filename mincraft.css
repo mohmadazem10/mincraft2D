@@ -1,0 +1,213 @@
+body{
+    background-color: aqua;
+    margin: 0px;
+}
+.floor{
+    position: absolute;
+    background-color: rgb(45, 14, 14);
+    width: 100%;
+    height: 250px;
+    top: 1055px;
+}
+.img1{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 955px;
+    left: 50px;
+    animation: moveRight 5s linear infinite;
+}
+.img2{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 955px;
+    left: 200px;
+    animation: moveRight 5s linear infinite;
+}
+.img3{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 955px;
+    left: 350px;
+    animation: moveRight 5s linear infinite;
+}
+.img4{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 955px;
+    left: 500px;
+    animation: moveRight 5s linear infinite;
+}
+.player1{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 88px;
+    left: 650px;
+   cursor: pointer;
+}
+.player2{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 88px;
+    left: 800px;
+    cursor: pointer;
+}
+.player3{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 88px;
+    left: 950px;
+    cursor: pointer;
+}
+.player4{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 88px;
+    left: 1100px;
+    cursor: pointer;
+}
+.player5{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 88px;
+    left: 1250px;
+    cursor: pointer;
+}
+.mit {
+  position: absolute;
+  top: 88px;
+  left: 66%;
+  transform: translateX(-50%) translateY(-20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 30px;
+}
+/* تنسيق الحاوية لتكون في منتصف الشاشة */
+.start-game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ليظهر في وسط الشاشة تماماً */
+    background: rgba(0, 0, 0, 0.5); /* خلفية ضبابية خفيفة خلف الزر */
+}
+
+#btn {
+    all: unset; /* إعادة ضبط الإعدادات الافتراضية للزر */
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 35px;
+    font-family: 'Courier New', Courier, monospace; /* خط يشبه البكسل */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    background-color: #4e4e4e; /* لون أزرار ماين كرافت الرمادي */
+    
+    /* حواف خشنة تشبه البكسل */
+    border: 4px solid #000;
+    box-shadow: 
+        inset -6px -6px 0px 0px #2a2a2a, /* ظل داخلي غامق */
+        inset 6px 6px 0px 0px #8b8b8b;   /* حافة داخلية فاتحة */
+    
+    transition: all 0.1s active;
+    position: relative;
+}
+
+/* تأثير عند تمرير الماوس (Hover) */
+#btn:hover {
+    background-color: #5c913c; /* يتحول للأخضر العشبي عند الحوم فوقه */
+    box-shadow: 
+        inset -6px -6px 0px 0px #3a5d26, 
+        inset 6px 6px 0px 0px #82c45a,
+        0 0 20px rgba(130, 196, 90, 0.5); /* توهج خفيف */
+    transform: scale(1.05); /* تكبير بسيط */
+}
+
+/* تأثير الضغطة (Click) */
+#btn:active {
+    transform: scale(0.95); /* ينضغط للداخل */
+    box-shadow: 
+        inset 6px 6px 0px 0px #2a2a2a, /* عكس الظلال ليعطي إيحاء بالضغط */
+        inset -6px -6px 0px 0px #8b8b8b;
+}
+
+/* إضافة نص "Minecraft Style" صغير فوق الزر (اختياري) */
+#btn::before {
+    content: "READY?";
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #ffcc00;
+    text-shadow: 2px 2px #000;
+    letter-spacing: 3px;
+}
+
+/* عند الظهور */
+.mit.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+h1{
+    position: absolute;
+    top: 50px;
+    right: 265px;
+    font-size: 100px;
+    color: rgb(24, 10, 10);
+}
+
+@keyframes moveRight {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+.pr1, .pr2, .pr3, .pr4, .pr5{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 911px;
+    left: 650px;
+    display: none;
+}
+/* كلاس القفز */
+.jump-animation {
+  animation: jump 0.5s ease;
+}
+/* تنسيق صور القفز لضمان ظهورها في نفس مكان اللاعب */
+.j1, .j2, .j3, .j4, .j5 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 911px; /* نفس إحداثيات pr */
+    left: 650px;
+    display: none; /* مخفية افتراضياً */
+}
+
+@keyframes jump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-300px); }
+  100% { transform: translateY(0); }
+}
+.img1, .img2, .img3, .img4 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 955px;
+    /* أزل سطر الـ animation */
+    left: 2000px; /* تبدأ من خارج الشاشة يميناً */
+}
